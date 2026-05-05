@@ -404,8 +404,6 @@ function submitForm(){
   var name=document.getElementById('input-name').value.trim();
   var phone=document.getElementById('input-phone').value.trim();
   if(!name||!phone){alert('Por favor, preencha seu nome e WhatsApp para continuar.');return;}
-  if(typeof fbq!=='undefined')fbq('track','Purchase',{currency:'BRL',value:100});
-  showScreen('screen-thanks');
   var a1=answers['q1']||'-';
   var a2=answers['q2']||'-';
   var a3=answers['q3']||'-';
@@ -422,7 +420,9 @@ function submitForm(){
     +'5️⃣ Receita em mãos: '+a5+'\n\n'
     +'Aguardo as indicações personalizadas e meu voucher de R$100! 😊';
   var url='https://wa.me/'+WPP+'?text='+encodeURIComponent(msg);
-  setTimeout(function(){window.open(url,'_blank');},1600);
+  window.location.href=url;
+  if(typeof fbq!=='undefined')fbq('track','Purchase',{currency:'BRL',value:100});
+  setTimeout(function(){showScreen('screen-thanks');},300);
 }
 </script>
 </body>
