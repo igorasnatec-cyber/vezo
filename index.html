@@ -317,6 +317,7 @@ button{cursor:pointer;border:none;background:none;font:inherit}
 var answers={};
 var TOTAL=5;
 var WPP='5522998403843';
+  var SHEET_URL='https://script.google.com/macros/s/AKfycbzyAE1PB1Zn4_t8ZU1cgZqweVMs-0KSiQWtKUb5aFXHVYV0IUgbWncYr2IIObFpkOrq/exec';
 function buildDots(){
   var wrap=document.getElementById('step-dots');
   wrap.innerHTML='';
@@ -404,11 +405,32 @@ function submitForm(){
   var name=document.getElementById('input-name').value.trim();
   var phone=document.getElementById('input-phone').value.trim();
   if(!name||!phone){alert('Por favor, preencha seu nome e WhatsApp para continuar.');return;}
+
   var a1=answers['q1']||'-';
   var a2=answers['q2']||'-';
   var a3=answers['q3']||'-';
   var a4=answers['q4']||'-';
   var a5=answers['q5']||'-';
+
+  // Salva na planilha
+  fetch(SHEET_URL,{
+    method:'POST',
+    mode:'no-cors',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      nome:name,
+      whatsapp:phone,
+      q1:a1,q2:a2,q3:a3,q4:a4,q5:a5
+    })
+  });
+
+  // Dispara pixel
+  if(typeof fbq!=='undefined')fbq('track','Purchase',{currency:'BRL',value:100});
+
+  // Mostra tela de obrigado
+  showScreen('screen-thanks');
+
+  // Redireciona para WhatsApp após 800ms
   var msg='Olá! Fiz o diagnóstico visual gratuito da Óticas Vezo! 🎯\n\n'
     +'*Nome:* '+name+'\n'
     +'*WhatsApp:* '+phone+'\n\n'
@@ -420,9 +442,7 @@ function submitForm(){
     +'5️⃣ Receita em mãos: '+a5+'\n\n'
     +'Aguardo as indicações personalizadas e meu voucher de R$100! 😊';
   var url='https://wa.me/'+WPP+'?text='+encodeURIComponent(msg);
-  window.location.href=url;
-  if(typeof fbq!=='undefined')fbq('track','Purchase',{currency:'BRL',value:100});
-  setTimeout(function(){showScreen('screen-thanks');},300);
+  setTimeout(function(){window.location.href=url;},800);
 }
 </script>
 </body>
