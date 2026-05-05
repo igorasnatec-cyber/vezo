@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnóstico Visual Gratuito — Óticas Vezo</title>
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1346028030725126');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1346028030725126&ev=PageView&noscript=1"/></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FAFAF7;--surface:#FFFFFF;--surface2:#F5F3EE;
+  --border:rgba(30,20,10,.10);--border2:rgba(30,20,10,.16);
+  --text:#1A1712;--muted:#6B6560;--faint:#B0ABA4;
+  --gold:#C49A3C;--gold-light:rgba(196,154,60,.10);
+  --green:#2E7D52;--green-light:#E8F5EE;
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-body:'DM Sans','Helvetica Neue',sans-serif;
+  --r-sm:6px;--r-md:10px;--r-lg:16px;--r-xl:24px;--r-full:9999px;
+  --shadow-sm:0 1px 4px rgba(26,23,18,.07);
+  --shadow-md:0 4px 20px rgba(26,23,18,.09);
+  --shadow-lg:0 12px 48px rgba(26,23,18,.12);
+  --shadow-gold:0 4px 24px rgba(196,154,60,.20);
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.65;min-height:100vh}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{cursor:pointer;border:none;background:none;font:inherit}
+.screen{display:none;min-height:100vh;flex-direction:column}
+.screen.active{display:flex}
+.ornament{width:48px;height:2px;background:var(--gold);margin:0 auto 20px;border-radius:2px}
+.ornament.left{margin:0 0 20px}
+#screen-welcome{align-items:center;justify-content:center;padding:52px 24px 48px;position:relative;overflow:hidden}
+.welcome-bg-circle{position:absolute;border-radius:50%;pointer-events:none}
+.welcome-bg-circle.c1{width:700px;height:700px;top:-280px;right:-220px;background:radial-gradient(circle,rgba(196,154,60,.06) 0,transparent 65%)}
+.welcome-bg-circle.c2{width:500px;height:500px;bottom:-200px;left:-180px;background:radial-gradient(circle,rgba(196,154,60,.04) 0,transparent 65%)}
+.welcome-inner{max-width:560px;width:100%;text-align:center;position:relative;z-index:1}
+.welcome-logo{font-family:var(--font-display);font-size:24px;font-weight:800;letter-spacing:-.5px;margin-bottom:44px;display:flex;align-items:center;justify-content:center;gap:3px}
+.welcome-logo .dot{color:var(--gold)}
+.welcome-tag{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(196,154,60,.35);color:var(--gold);font-size:11px;font-weight:700;padding:5px 16px;border-radius:var(--r-full);margin-bottom:28px;letter-spacing:.6px;text-transform:uppercase;background:var(--gold-light)}
+.welcome-tag::before{content:'◆';font-size:7px}
+.welcome-h1{font-family:var(--font-display);font-size:clamp(2.1rem,6vw,3.4rem);font-weight:800;line-height:1.08;letter-spacing:-.04em;margin-bottom:22px}
+.welcome-h1 em{font-style:italic;color:var(--gold)}
+.welcome-sub{font-size:1.05rem;color:var(--muted);line-height:1.78;max-width:480px;margin:0 auto 36px;font-weight:400}
+.welcome-benefits{display:flex;flex-direction:column;gap:11px;margin-bottom:36px;text-align:left;max-width:400px;margin-left:auto;margin-right:auto}
+.benefit-row{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:13px 18px;box-shadow:var(--shadow-sm)}
+.benefit-icon{font-size:1.2rem;flex-shrink:0}
+.benefit-text{font-size:14px;font-weight:500}
+.benefit-text span{color:var(--muted);font-weight:400}
+.btn-start{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--gold);color:#fff;font-size:16px;font-weight:700;padding:18px 44px;border-radius:var(--r-full);box-shadow:var(--shadow-gold);transition:transform .2s,box-shadow .2s,background .2s;width:100%;max-width:400px;letter-spacing:-.1px;position:relative;overflow:hidden}
+.btn-start::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transform:skewX(-20deg);animation:shimmer 3s infinite 1s}
+@keyframes shimmer{0%{left:-100%}100%{left:160%}}
+.btn-start:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(196,154,60,.35);background:#B8893A}
+.welcome-footer{margin-top:22px;font-size:12px;color:var(--faint);display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap}
+.welcome-footer span{display:flex;align-items:center;gap:5px}
+.social-proof-row{margin-top:28px;padding-top:24px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+.sp-avatars{display:flex}
+.sp-avatar{width:32px;height:32px;border-radius:50%;background:var(--surface2);border:2px solid var(--surface);margin-left:-8px;font-size:13px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-sm)}
+.sp-avatars .sp-avatar:first-child{margin-left:0}
+.sp-text{font-size:13px;color:var(--muted)}
+.sp-text strong{color:var(--text);font-weight:600}
+.stars{color:var(--gold);letter-spacing:1px;font-size:11px}
+#screen-quiz{align-items:center;justify-content:flex-start}
+.quiz-header{width:100%;background:var(--surface);border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:20;height:58px}
+.quiz-logo{font-family:var(--font-display);font-size:18px;font-weight:800;letter-spacing:-.3px}
+.quiz-logo .dot{color:var(--gold)}
+.quiz-step-info{display:flex;align-items:center;gap:10px}
+.quiz-step-text{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.3px}
+.quiz-step-dots{display:flex;gap:5px}
+.quiz-dot{width:7px;height:7px;border-radius:50%;background:var(--surface2);border:1.5px solid var(--border2);transition:all .3s}
+.quiz-dot.done{background:var(--gold);border-color:var(--gold)}
+.quiz-dot.active{background:var(--text);border-color:var(--text);transform:scale(1.25)}
+.progress-outer{width:100%;height:3px;background:var(--surface2);position:sticky;top:58px;z-index:19}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),#E8B84B);transition:width .6s cubic-bezier(.4,0,.2,1);border-radius:0 2px 2px 0}
+.quiz-body{flex:1;width:100%;max-width:620px;margin:0 auto;padding:44px 24px 64px}
+.question-block{display:none}
+.question-block.active{display:block;animation:qFadeUp .45s cubic-bezier(.4,0,.2,1)}
+@keyframes qFadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.q-eyebrow{font-size:11px;font-weight:700;color:var(--gold);letter-spacing:.8px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.q-eyebrow::before{content:'';display:block;width:20px;height:1.5px;background:var(--gold);border-radius:2px}
+.q-title{font-family:var(--font-display);font-size:clamp(1.5rem,4vw,2.1rem);font-weight:800;line-height:1.18;letter-spacing:-.03em;margin-bottom:8px}
+.q-sub{font-size:.93rem;color:var(--muted);margin-bottom:32px;line-height:1.65}
+.options-grid{display:flex;flex-direction:column;gap:11px}
+.option-btn{display:flex;align-items:center;gap:16px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-xl);padding:18px 20px;text-align:left;width:100%;transition:border-color .2s,box-shadow .2s,transform .2s,background .2s;box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
+.option-btn::before{content:'';position:absolute;inset:0;background:var(--gold-light);opacity:0;transition:opacity .2s}
+.option-btn:hover{border-color:var(--gold);box-shadow:var(--shadow-md);transform:translateX(5px)}
+.option-btn:hover::before{opacity:1}
+.option-btn.selected{border-color:var(--text);background:var(--text);transform:translateX(5px)}
+.option-btn.selected::before{opacity:0}
+.opt-letter{width:38px;height:38px;border-radius:var(--r-md);background:var(--surface2);color:var(--muted);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;transition:all .2s;font-family:var(--font-display);border:1px solid var(--border)}
+.opt-check{width:38px;height:38px;border-radius:var(--r-md);background:var(--gold);color:#fff;display:none;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;font-weight:700}
+.option-btn.selected .opt-letter{display:none}
+.option-btn.selected .opt-check{display:flex}
+.opt-content{flex:1;position:relative;z-index:1}
+.opt-title{font-weight:600;font-size:15px;display:block;margin-bottom:2px;transition:color .2s}
+.opt-sub{font-size:13px;color:var(--muted);line-height:1.45;transition:color .2s}
+.option-btn.selected .opt-title{color:#fff}
+.option-btn.selected .opt-sub{color:rgba(255,255,255,.55)}
+#screen-capture{align-items:center;justify-content:center;padding:52px 24px;background:var(--bg)}
+.capture-inner{max-width:520px;width:100%}
+.capture-badge{display:inline-flex;align-items:center;gap:7px;background:var(--green-light);color:var(--green);font-size:11px;font-weight:700;padding:5px 14px;border-radius:var(--r-full);margin-bottom:24px;border:1px solid rgba(46,125,82,.18);letter-spacing:.4px}
+.capture-h1{font-family:var(--font-display);font-size:clamp(1.9rem,5vw,2.8rem);font-weight:800;line-height:1.08;letter-spacing:-.04em;margin-bottom:16px}
+.capture-h1 em{font-style:italic;color:var(--gold)}
+.capture-sub{font-size:1rem;color:var(--muted);line-height:1.75;margin-bottom:28px}
+.result-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-xl);padding:22px 24px;margin-bottom:24px;box-shadow:var(--shadow-md);position:relative;overflow:hidden}
+.result-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),#E8B84B)}
+.result-card-title{font-size:11px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;color:var(--faint);margin-bottom:14px}
+.result-tags{display:flex;flex-wrap:wrap;gap:8px}
+.result-tag{background:var(--text);color:#fff;font-size:12px;font-weight:600;padding:5px 14px;border-radius:var(--r-full);letter-spacing:.2px}
+.voucher-strip{background:var(--gold-light);border:1px dashed rgba(196,154,60,.4);border-radius:var(--r-lg);padding:14px 18px;display:flex;align-items:center;gap:14px;margin-bottom:24px}
+.voucher-icon{font-size:1.8rem;flex-shrink:0}
+.voucher-text strong{font-weight:700;font-size:15px;display:block;margin-bottom:2px}
+.voucher-text span{font-size:13px;color:var(--muted)}
+.form-group{margin-bottom:14px}
+.form-label{font-size:13px;font-weight:600;margin-bottom:6px;display:block}
+.form-input{width:100%;padding:14px 18px;background:var(--surface);border:1.5px solid var(--border2);border-radius:var(--r-lg);font:500 16px/1 var(--font-body);color:var(--text);outline:none;transition:border-color .2s,box-shadow .2s}
+.form-input:focus{border-color:var(--gold);box-shadow:0 0 0 4px var(--gold-light)}
+.form-input::placeholder{color:var(--faint)}
+.btn-submit{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:#25D366;color:#fff;font-size:17px;font-weight:700;padding:18px;border-radius:var(--r-full);box-shadow:0 4px 20px rgba(37,211,102,.3);transition:transform .2s,box-shadow .2s;margin-top:10px;letter-spacing:-.2px}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(37,211,102,.4)}
+.btn-submit svg{width:22px;height:22px;fill:#fff;flex-shrink:0}
+.capture-footer{margin-top:16px;font-size:12px;color:var(--faint);text-align:center;line-height:1.65}
+#screen-thanks{align-items:center;justify-content:center;padding:52px 24px;background:var(--bg);text-align:center}
+.thanks-inner{max-width:500px;width:100%}
+.thanks-seal{width:88px;height:88px;border-radius:50%;background:var(--green-light);border:3px solid rgba(46,125,82,.2);display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin:0 auto 28px;animation:popIn .5s cubic-bezier(.4,0,.2,1)}
+@keyframes popIn{from{transform:scale(.5);opacity:0}to{transform:scale(1);opacity:1}}
+.thanks-h1{font-family:var(--font-display);font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:14px}
+.thanks-h1 em{font-style:italic;color:var(--gold)}
+.thanks-sub{font-size:1rem;color:var(--muted);line-height:1.78;margin-bottom:36px;max-width:420px;margin-left:auto;margin-right:auto}
+.thanks-steps{display:flex;flex-direction:column;gap:12px;margin-bottom:28px;text-align:left}
+.thanks-step{display:flex;align-items:flex-start;gap:14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:16px 18px;box-shadow:var(--shadow-sm)}
+.thanks-num{width:30px;height:30px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;margin-top:1px;font-family:var(--font-display)}
+.thanks-step strong{font-weight:700;font-size:14px;display:block;margin-bottom:2px}
+.thanks-step span{font-size:13px;color:var(--muted)}
+.thanks-voucher{background:var(--gold);color:#fff;border-radius:var(--r-xl);padding:22px 24px;display:flex;align-items:center;gap:16px;text-align:left;box-shadow:var(--shadow-gold)}
+.thanks-voucher-icon{font-size:2rem;flex-shrink:0}
+.thanks-voucher strong{font-weight:800;font-size:18px;display:block;margin-bottom:3px;font-family:var(--font-display)}
+.thanks-voucher span{font-size:13px;color:rgba(255,255,255,.8)}
+@media(max-width:480px){
+  #screen-welcome{padding:40px 20px}
+  .quiz-body{padding:32px 18px 56px}
+  .option-btn{padding:14px 16px}
+  #screen-capture,#screen-thanks{padding:40px 20px}
+}
+</style>
+</head>
+<body>
+
+<section id="screen-welcome" class="screen active">
+  <div class="welcome-bg-circle c1"></div>
+  <div class="welcome-bg-circle c2"></div>
+  <div class="welcome-inner">
+    <div class="welcome-logo">Óticas Vezo<span class="dot">.</span></div>
+    <div class="welcome-tag">Diagnóstico Visual Gratuito</div>
+    <div class="ornament"></div>
+    <h1 class="welcome-h1">Descubra o óculos <em>perfeito</em><br>para você</h1>
+    <p class="welcome-sub">Responda 5 perguntas rápidas e nossa especialista monta a indicação ideal de lente e armação para o seu estilo de vida — com condição exclusiva no final.</p>
+    <div class="welcome-benefits">
+      <div class="benefit-row"><div class="benefit-icon">⏱</div><div class="benefit-text">Menos de 60 segundos <span>— bem rápido!</span></div></div>
+      <div class="benefit-row"><div class="benefit-icon">🔍</div><div class="benefit-text">Indicação personalizada <span>— baseada no seu perfil visual</span></div></div>
+      <div class="benefit-row"><div class="benefit-icon">🎁</div><div class="benefit-text">Voucher de R$ 100 <span>— para quem finaliza o diagnóstico</span></div></div>
+    </div>
+    <button class="btn-start" onclick="goToQuiz()">Iniciar diagnóstico gratuito &nbsp;→</button>
+    <div class="welcome-footer">
+      <span>✓ Sem compromisso</span>
+      <span>✓ 100% gratuito</span>
+      <span>✓ Resultado na hora</span>
+    </div>
+    <div class="social-proof-row">
+      <div class="sp-avatars">
+        <div class="sp-avatar">👩</div><div class="sp-avatar">👨</div>
+        <div class="sp-avatar">👩‍🦱</div><div class="sp-avatar">👨‍🦳</div>
+      </div>
+      <div class="sp-text"><span class="stars">★★★★★</span><br><strong>+2.000 clientes</strong> já encontraram o óculos ideal</div>
+    </div>
+  </div>
+</section>
+
+<section id="screen-quiz" class="screen">
+  <div class="quiz-header">
+    <div class="quiz-logo">Óticas Vezo<span class="dot">.</span></div>
+    <div class="quiz-step-info">
+      <span class="quiz-step-text" id="step-label">1 de 5</span>
+      <div class="quiz-step-dots" id="step-dots"></div>
+    </div>
+  </div>
+  <div class="progress-outer"><div class="progress-fill" id="progress-fill" style="width:20%"></div></div>
+  <div class="quiz-body">
+
+    <div class="question-block active" id="q1">
+      <div class="q-eyebrow">Pergunta 1 de 5</div>
+      <h2 class="q-title">Qual é o seu principal incômodo visual hoje?</h2>
+      <p class="q-sub">Escolha a opção que mais combina com a sua situação atual.</p>
+      <div class="options-grid">
+        <button class="option-btn" onclick="selectOption(this,'q1','Dificuldade para ler de perto')"><div class="opt-letter">A</div><div class="opt-check">✓</div><div class="opt-content"><span class="opt-title">Dificuldade para ler de perto</span><span class="opt-sub">Textos no celular, livros ou menus ficam embaçados</span></div></button>
+        <button class="option-btn" onclick="selectOption(this,'q1','Dificuldade para enxergar de longe')"><div class="opt-letter">B</div><div class="opt-check">✓</div><div class="opt-content"><span class="opt-title">Dificuldade para enxergar de longe</span><span class="opt-sub">Placa de trânsito, lousa, TV ou rostos distantes</span></div></button>
+        <button class="option-btn" onclick="selectOption(this,'q1','Cansaço e dor de cabeça em telas')"><div class="opt-letter">C</div><div class="opt-check">✓</div><div class="opt-content"><span class="opt-title">Cansaço e dor de cabeça em telas</span><span class="opt-sub">Celular, computador ou TV por longos períodos</span></div></button>
+        <button class="option-btn" onclick="selectOption(this,'q1','Apenas quero renovar a armação')"><div class="opt-letter">D</div><div class="opt-check">✓</div><div class="opt-content"><span class="opt-title">Quero renovar a armação por estética</span><span class="opt-sub">Meu grau está em dia, mas quero um visual novo</span></div></button>
+      </div>
+    </div>
+
+    <div class="question-block" id="q2">
+      <div class="q-eyebrow">Pergunta 2 de 5</div>
+      <h2 class="q-title">Há quanto tempo você não atualiza o grau do seu óculos?</h2>
+      <p class="q-sub">Isso nos ajuda a entender sua urgência e indicar o melhor próximo passo.</p>
+      <div class="options-grid">
+        <button class="option-btn" onclick="selectOption(this,'q2','Menos de 1 ano')"><div class="opt-letter">A</div><div class="opt-check">✓</div><div class="opt-content"><span class="opt-title">Menos de 1 ano</span><span class="opt-sub">Estou com o grau em dia</span></div></button>
+        <button class="option-btn" onclick="selectOption(this,'q2','Entre 1 e 2 anos')"><div class="opt-letter">B</div><div class="opt-check">✓</div><div class="opt-content"><span class="opt-title">Entre 1 e 2 anos</span><span class="opt-sub">Talvez precise revisar em breve</span></div></button>
+        <button class="option-btn" onclick="selectOption(this,'q2','Mais de 2 anos')"><div class="opt-letter">C</div><div class="opt-check">✓</div><div class="opt-content"><span class="opt-title">Mais de 2 anos</span><span class="opt-sub">Já está na hora — posso estar perdendo qualidade de visão</span></div></button>
+        <button class="option-btn" onclick="selectOption(this,'q2','Nunca fiz exame de vista')"><div class="opt-letter">D</div><div class="opt-check">✓</div><div class="opt-content"><span class="opt-title">Nunca fiz um exame de vista</span><span class="opt-sub">Preciso fazer o exame antes de escolher as lentes</span></div></button>
+      </div>
+    </div>
+
+    <div class="question-block" id="q3">
+      <div class="q-eyebrow">Pergunta 3 de 5</div>
+      <h2 class="q-title">O que é mais importante para você na escolha do seu próximo óculos?</h2>
+      <p class="q-sub">Esta é a pergunta mais importante do diagnóstico — seja honesto(a).</p>
+      <div class="options-grid">
+        <button class="option-btn" onclick="selectOption(this,'q3','Conforto e leveza')"><div class="opt-letter">A</div><div class="opt-check">✓</div><div class="opt-content"><span class="opt-title">Conforto e leveza o dia todo</span><span class="opt-sub">Quero esquecer que estou usando</span></div></button>
+        <button class="option-btn" onclick="selectOption(this,'q3','Durabilidade e resistência')"><div class="opt-letter">B</div><div class="opt-check">✓</div><div class="opt-content"><span class="opt-title">Durabilidade e resistência</span><span class="opt-sub">Tenho filhos, pratico esportes ou sou desastrado(a)</span></div></button>
+        <button class="option-btn" onclick="selectOption(this,'q3','Estilo e design moderno')"><div class="opt-letter">C</div><div class="opt-check">✓</div><div class="opt-content"><span class="opt-title">Estilo e design moderno</span><span class="opt-sub">Quero uma armação que complete o meu visual</span></div></button>
+        <button class="option-btn" onclick="selectOption(this,'q3','Melhor custo-benefício')"><div class="opt-letter">D</div><div class="opt-check">✓</div><div class="opt-content"><span class="opt-title">O melhor custo-benefício</span><span class="opt-sub">Qualidade e tecnologia sem gastar uma fortuna</span></div></button>
+      </div>
+    </div>
+
+    <div class="question-block" id="q4">
+      <div class="q-eyebrow">Pergunta 4 de 5</div>
+      <h2 class="q-title">Com qual situação você mais se identifica na sua rotina?</h2>
+      <p class="q-sub">Isso define qual tecnologia de lente é mais indicada para você.</p>
+      <div class="options-grid">
+        <button class="option-btn" onclick="selectOption(this,'q4','Passo muito tempo em telas')"><div class="opt-letter">A</div><div class="opt-check">✓</div><div class="opt-content"><span class="opt-title">Trabalho muito tempo em frente a telas</span><span class="opt-sub">Mais de 5h por dia no computador ou celular</span></div></button>
+        <button class="option-btn" onclick="selectOption(this,'q4','Dirijo com frequência')"><div class="opt-letter">B</div><div class="opt-check">✓</div><div class="opt-content"><span class="opt-title">Dirijo com frequência, inclusive à noite</span><span class="opt-sub">Faróis me incomodam ou a visão noturna está ruim</span></div></button>
+        <button class="option-btn" onclick="selectOption(this,'q4','Atividades ao ar livre')"><div class="opt-letter">C</div><div class="opt-check">✓</div><div class="opt-content"><span class="opt-title">Pratico atividades ao ar livre</span><span class="opt-sub">Esportes, praia, caminhadas ou sol frequente</span></div></button>
+        <button class="option-btn" onclick="selectOption(this,'q4','Uso óculos o dia todo')"><div class="opt-letter">D</div><div class="opt-check">✓</div><div class="opt-content"><span class="opt-title">Uso o óculos o dia todo, em todo lugar</span><span class="opt-sub">Do acordar até dormir, em todos os ambientes</span></div></button>
+      </div>
+    </div>
+
+    <div class="question-block" id="q5">
+      <div class="q-eyebrow">Pergunta 5 de 5</div>
+      <h2 class="q-title">Você já tem a receita oftalmológica em mãos?</h2>
+      <p class="q-sub">Última pergunta! Sua indicação está sendo preparada.</p>
+      <div class="options-grid">
+        <button class="option-btn" onclick="selectOption(this,'q5','Sim, tenho a receita pronta')"><div class="opt-letter">A</div><div class="opt-check">✓</div><div class="opt-content"><span class="opt-title">Sim, tenho a receita em mãos!</span><span class="opt-sub">Estou pronto(a) para encomendar agora</span></div></button>
+        <button class="option-btn" onclick="selectOption(this,'q5','Tenho mas pode estar desatualizada')"><div class="opt-letter">B</div><div class="opt-check">✓</div><div class="opt-content"><span class="opt-title">Tenho, mas pode estar desatualizada</span><span class="opt-sub">Preciso confirmar se ainda é válida</span></div></button>
+        <button class="option-btn" onclick="selectOption(this,'q5','Não tenho, preciso fazer o exame')"><div class="opt-letter">C</div><div class="opt-check">✓</div><div class="opt-content"><span class="opt-title">Não tenho, preciso fazer o exame</span><span class="opt-sub">A Vezo pode me ajudar a agendar o exame também</span></div></button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="screen-capture" class="screen">
+  <div class="capture-inner">
+    <div class="capture-badge">✓ Diagnóstico concluído</div>
+    <div class="ornament left"></div>
+    <h2 class="capture-h1">Seu perfil visual<br>está <em>pronto</em>.</h2>
+    <p class="capture-sub">Nossa especialista analisou suas respostas e tem as indicações certas para você. Informe seus dados abaixo para receber tudo agora no WhatsApp.</p>
+    <div class="result-card">
+      <div class="result-card-title">🔍 Seu perfil identificado</div>
+      <div class="result-tags" id="result-tags"><span class="result-tag">Analisando...</span></div>
+    </div>
+    <div class="voucher-strip">
+      <div class="voucher-icon">🎁</div>
+      <div class="voucher-text"><strong>Seu voucher de R$ 100 está garantido</strong><span>Informe seus dados para ativar e receber no WhatsApp agora.</span></div>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="input-name">Seu nome completo</label>
+      <input class="form-input" type="text" id="input-name" placeholder="Ex: Maria Silva" autocomplete="name">
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="input-phone">Seu WhatsApp (com DDD)</label>
+      <input class="form-input" type="tel" id="input-phone" placeholder="Ex: (22) 99999-9999" autocomplete="tel" inputmode="numeric">
+    </div>
+    <button class="btn-submit" onclick="submitForm()">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Receber minhas indicações no WhatsApp
+    </button>
+    <p class="capture-footer">🔒 Seus dados são 100% seguros e não serão compartilhados com terceiros.</p>
+  </div>
+</section>
+
+<section id="screen-thanks" class="screen">
+  <div class="thanks-inner">
+    <div class="thanks-seal">✓</div>
+    <div class="ornament"></div>
+    <h2 class="thanks-h1">Perfeito! Sua especialista <em>já recebeu</em> seu perfil.</h2>
+    <p class="thanks-sub">Em instantes ela vai te chamar no WhatsApp com as indicações personalizadas e o código do seu voucher.</p>
+    <div class="thanks-steps">
+      <div class="thanks-step"><div class="thanks-num">1</div><div><strong>Especialista notificada</strong><span>Ela recebeu seu perfil visual completo e já está preparando suas indicações.</span></div></div>
+      <div class="thanks-step"><div class="thanks-num">2</div><div><strong>Indicações chegando no WhatsApp</strong><span>Armação, lente ideal e as melhores condições para o seu perfil.</span></div></div>
+      <div class="thanks-step"><div class="thanks-num">3</div><div><strong>Voucher ativado</strong><span>R$ 100 de desconto garantido para sua primeira compra na Vezo.</span></div></div>
+    </div>
+    <div class="thanks-voucher">
+      <div class="thanks-voucher-icon">🎁</div>
+      <div><strong>Voucher VEZO100 ativado!</strong><span>Nossa especialista vai enviar o código no WhatsApp agora.</span></div>
+    </div>
+  </div>
+</section>
+
+<script>
+var answers={};
+var TOTAL=5;
+var WPP='5522998403843';
+function buildDots(){
+  var wrap=document.getElementById('step-dots');
+  wrap.innerHTML='';
+  for(var i=1;i<=TOTAL;i++){
+    var d=document.createElement('div');
+    d.className='quiz-dot'+(i===1?' active':'');
+    d.id='dot-'+i;
+    wrap.appendChild(d);
+  }
+}
+function updateProgress(q){
+  document.getElementById('progress-fill').style.width=(q/TOTAL*100)+'%';
+  document.getElementById('step-label').textContent=q+' de '+TOTAL;
+  for(var i=1;i<=TOTAL;i++){
+    var d=document.getElementById('dot-'+i);
+    if(!d)continue;
+    d.className='quiz-dot'+(i<q?' done':i===q?' active':'');
+  }
+}
+function goToQuiz(){
+  showScreen('screen-quiz');
+  buildDots();
+  updateProgress(1);
+  if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:'Quiz Iniciado'});
+}
+function showScreen(id){
+  var screens=document.querySelectorAll('.screen');
+  for(var i=0;i<screens.length;i++)screens[i].classList.remove('active');
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function selectOption(btn,qId,value){
+  var block=document.getElementById(qId);
+  var btns=block.querySelectorAll('.option-btn');
+  for(var i=0;i<btns.length;i++)btns[i].classList.remove('selected');
+  btn.classList.add('selected');
+  answers[qId]=value;
+  var num=parseInt(qId.replace('q',''));
+  setTimeout(function(){
+    if(num<TOTAL){
+      block.classList.remove('active');
+      var next=document.getElementById('q'+(num+1));
+      next.classList.add('active');
+      next.scrollIntoView({behavior:'smooth',block:'start'});
+      updateProgress(num+1);
+    } else {
+      if(typeof fbq!=='undefined')fbq('track','Lead');
+      showScreen('screen-capture');
+      renderTags();
+    }
+  },480);
+}
+var tagMap={
+  'Cansaço e dor de cabeça em telas':'Lente Anti-Blue 💻',
+  'Dificuldade para enxergar de longe':'Lente Monofocal 🔭',
+  'Dificuldade para ler de perto':'Lente Progressiva 📖',
+  'Apenas quero renovar a armação':'Armação Premium ✨',
+  'Conforto e leveza':'Armação TR90 🪶',
+  'Durabilidade e resistência':'Armação Inquebrável 💪',
+  'Estilo e design moderno':'Coleção Design 🕶️',
+  'Melhor custo-benefício':'Combo Especial 💰',
+  'Passo muito tempo em telas':'Filtro Luz Azul 🛡️',
+  'Dirijo com frequência':'Antirreflexo Noturno 🌙',
+  'Atividades ao ar livre':'Lente Fotossensível ☀️',
+  'Uso óculos o dia todo':'Lente Multifuncional 🔄'
+};
+function renderTags(){
+  var container=document.getElementById('result-tags');
+  container.innerHTML='';
+  var used={};
+  var vals=Object.values(answers);
+  for(var i=0;i<vals.length;i++){
+    var tag=tagMap[vals[i]];
+    if(tag&&!used[tag]){
+      used[tag]=true;
+      var span=document.createElement('span');
+      span.className='result-tag';
+      span.textContent=tag;
+      container.appendChild(span);
+    }
+  }
+  if(container.children.length===0)container.innerHTML='<span class="result-tag">Perfil identificado ✓</span>';
+}
+function submitForm(){
+  var name=document.getElementById('input-name').value.trim();
+  var phone=document.getElementById('input-phone').value.trim();
+  if(!name||!phone){alert('Por favor, preencha seu nome e WhatsApp para continuar.');return;}
+  if(typeof fbq!=='undefined')fbq('track','Purchase',{currency:'BRL',value:100});
+  showScreen('screen-thanks');
+  var a1=answers['q1']||'-';
+  var a2=answers['q2']||'-';
+  var a3=answers['q3']||'-';
+  var a4=answers['q4']||'-';
+  var a5=answers['q5']||'-';
+  var msg='Olá! Fiz o diagnóstico visual gratuito da Óticas Vezo! 🎯\n\n'
+    +'*Nome:* '+name+'\n'
+    +'*WhatsApp:* '+phone+'\n\n'
+    +'*Meu Perfil Visual:*\n'
+    +'1️⃣ Incômodo visual: '+a1+'\n'
+    +'2️⃣ Última atualização do grau: '+a2+'\n'
+    +'3️⃣ Prioridade na escolha: '+a3+'\n'
+    +'4️⃣ Rotina principal: '+a4+'\n'
+    +'5️⃣ Receita em mãos: '+a5+'\n\n'
+    +'Aguardo as indicações personalizadas e meu voucher de R$100! 😊';
+  var url='https://wa.me/'+WPP+'?text='+encodeURIComponent(msg);
+  setTimeout(function(){window.open(url,'_blank');},1600);
+}
+</script>
+</body>
+</html>
